@@ -33,7 +33,7 @@ public class POP3ReceiveMailTest {
 		//定义收件人的邮箱帐号
 		String user = "1455973223@qq.com";
 		// QQ邮箱的SMTP的授权码
-		String pwd = "pqtsbpnvjpnmbafc";
+		String pwd = "xxxxxxxxxxxxx";
 		String protocol = "pop3";
 		Properties props = new Properties();
 		// 使用的协议（JavaMail规范要求）
