@@ -30,6 +30,7 @@ public class POP3ReceiveMailTest {
 	public static void main(String[] args) throws Exception {
 		// 定义连接POP3服务器的属性信息
 		String host = "pop.qq.com";
+		//定义收件人
 		String user = "1455973223@qq.com";
 		// QQ邮箱的SMTP的授权码
 		String pwd = "pqtsbpnvjpnmbafc";
