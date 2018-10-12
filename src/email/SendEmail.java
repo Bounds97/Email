@@ -56,7 +56,7 @@ public class SendEmail {
 		Session session = Session.getDefaultInstance(properties, new Authenticator() {
 			public PasswordAuthentication getPasswordAuthentication() {
 				// 发件人邮件用户名、授权码
-				return new PasswordAuthentication("1455973223@qq.com", "pqtsbpnvjpnmbafc"); 
+				return new PasswordAuthentication("1455973223@qq.com", "xxxxxxx"); 
 			}
 		});
 
