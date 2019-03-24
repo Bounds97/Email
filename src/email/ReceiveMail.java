@@ -14,7 +14,7 @@ import javax.mail.internet.MimeUtility;
 import com.sun.mail.util.MailSSLSocketFactory;
 
 /**
- * @author Bounds
+ * @author Bounds 接收邮件
  *
  */
 public class ReceiveMail {
@@ -54,15 +54,16 @@ public class ReceiveMail {
 		System.out.println("收件箱的邮件数：" + length);
 		System.out.println("-------------------------------------------\n");
 		for (int i = 0; i < length; i++) {
-			//解决Folder is not Open的问题
-			if(!messages[i].getFolder().isOpen()) //判断是否open  
-                messages[i].getFolder().open(Folder.READ_WRITE); //如果close，就重新open
+			// 解决Folder is not Open的问题
+			if (!messages[i].getFolder().isOpen()) // 判断是否open
+				messages[i].getFolder().open(Folder.READ_WRITE); // 如果close，就重新open
 			String from = MimeUtility.decodeText(messages[i].getFrom()[0].toString());
 			InternetAddress ia = new InternetAddress(from);
 			System.out.println("发件人：" + ia.getPersonal() + '<' + ia.getAddress() + '>');
 			System.out.println("主题：" + messages[i].getSubject());
 			System.out.println("邮件大小：" + messages[i].getSize());
-			System.out.println("邮件发送时间:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(messages[i].getSentDate()));
+			System.out
+					.println("邮件发送时间:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(messages[i].getSentDate()));
 			// 如果该邮件是组合型"multipart/*"则可能包含附件等
 			Message msg = messages[i];
 			if (msg.isMimeType("multipart/alternative")) {

@@ -28,15 +28,15 @@ import javax.mail.internet.MimeUtility;
 import com.sun.mail.util.MailSSLSocketFactory;
 
 /**
- * @author Bounds
+ * @author Bounds 发送邮件
  *
  */
 public class SendEmail {
 
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 
 		// 收件人邮箱
-		String[] to = {"493230211@qq.com","872951313@qq.com"};
+		String[] to = { "493230211@qq.com", "872951313@qq.com" };
 		// 发件人邮箱
 		String from = "1455973223@qq.com";
 		// 指定发送邮件的主机为 smtp.qq.com
@@ -60,27 +60,27 @@ public class SendEmail {
 		Session session = Session.getDefaultInstance(properties, new Authenticator() {
 			public PasswordAuthentication getPasswordAuthentication() {
 				// 发件人邮件用户名、授权码
-				return new PasswordAuthentication("1455973223@qq.com", "xxxxxxx"); 
+				return new PasswordAuthentication("1455973223@qq.com", "xxxxxxx");
 			}
 		});
 
 		try {
 			// 创建默认的 MimeMessage 对象
 			MimeMessage message = new MimeMessage(session);
-			//设置发件人的昵称
-			String nick=MimeUtility.encodeText("Bounds");
+			// 设置发件人的昵称
+			String nick = MimeUtility.encodeText("Bounds");
 			// Set From: 设置发件人地址
-			message.setFrom(new InternetAddress(nick+" <"+from+">"));
-			//解析一组收件人的地址
-			InternetAddress[] address=new InternetAddress[to.length];
-			for(int i = 0; i < to.length; i++){
-				address[i]=new InternetAddress(to[i]);
+			message.setFrom(new InternetAddress(nick + " <" + from + ">"));
+			// 解析一组收件人的地址
+			InternetAddress[] address = new InternetAddress[to.length];
+			for (int i = 0; i < to.length; i++) {
+				address[i] = new InternetAddress(to[i]);
 			}
 			// Set To: 设置收件人地址 ，TO代表邮件的主要接受者，CC代表邮件的抄送接收者，BCC代表邮件的暗送接受者
 			message.addRecipients(Message.RecipientType.BCC, address);
 			// Set Subject: 设置头部字段
 			message.setSubject("这是邮件的主题。。。");
-			//设置发送日期
+			// 设置发送日期
 			message.setSentDate(new Date());
 			// 创建消息部分
 			BodyPart messageBody = new MimeBodyPart();
@@ -90,15 +90,15 @@ public class SendEmail {
 			Multipart multipart = new MimeMultipart();
 			// 设置附件部分
 			messageBody = new MimeBodyPart();
-			File file=new File("file.txt");
-			FileOutputStream fos=new FileOutputStream(file);
-			OutputStreamWriter osw=new OutputStreamWriter(fos, "UTF-8");
+			File file = new File("file.txt");
+			FileOutputStream fos = new FileOutputStream(file);
+			OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
 			osw.write("这是一封邮件。。。");
 			osw.close();
 			fos.close();
-			//封装文件的简单 DataSource 对象
+			// 封装文件的简单 DataSource 对象
 			DataSource source = new FileDataSource(file);
-			//返回与此 DataHandler 实例关联的 DataSource
+			// 返回与此 DataHandler 实例关联的 DataSource
 			messageBody.setDataHandler(new DataHandler(source));
 			messageBody.setFileName(file.getName());
 			// 设置消息部分
