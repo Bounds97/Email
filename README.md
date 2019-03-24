@@ -1,4 +1,3 @@
 # JavaMail邮件的收发
 
-- javaMail实现邮件发送
-- javaMail实现邮件接受
+- javaMail实现邮件接收发送
