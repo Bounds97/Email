@@ -28,7 +28,7 @@ import com.sun.mail.util.MailSSLSocketFactory;
 
 /**
  * @author Bounds
- *
+ * 
  */
 public class POP3ReceiveMailTest {
 	public static void main(String[] args) throws Exception {

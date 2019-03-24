@@ -14,7 +14,7 @@ import javax.mail.internet.MimeUtility;
 import com.sun.mail.util.MailSSLSocketFactory;
 
 /**
- * @author Bounds 接收邮件
+ * @author Bounds
  *
  */
 public class ReceiveMail {

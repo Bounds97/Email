@@ -28,7 +28,7 @@ import javax.mail.internet.MimeUtility;
 import com.sun.mail.util.MailSSLSocketFactory;
 
 /**
- * @author Bounds 发送邮件
+ * @author Bounds
  *
  */
 public class SendEmail {
