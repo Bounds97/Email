@@ -26,6 +26,10 @@ import javax.mail.internet.MimeUtility;
 
 import com.sun.mail.util.MailSSLSocketFactory;
 
+/**
+ * @author Bounds
+ *
+ */
 public class POP3ReceiveMailTest {
 	public static void main(String[] args) throws Exception {
 		// 定义连接POP3服务器的属性信息

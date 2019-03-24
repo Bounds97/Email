@@ -13,6 +13,10 @@ import javax.mail.internet.MimeUtility;
 
 import com.sun.mail.util.MailSSLSocketFactory;
 
+/**
+ * @author Bounds
+ *
+ */
 public class ReceiveMail {
 
 	public static void main(String[] args) throws Exception {

@@ -27,6 +27,10 @@ import javax.mail.internet.MimeUtility;
 
 import com.sun.mail.util.MailSSLSocketFactory;
 
+/**
+ * @author Bounds
+ *
+ */
 public class SendEmail {
 
 	public static void main(String[] args) throws IOException{
